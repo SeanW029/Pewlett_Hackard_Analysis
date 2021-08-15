@@ -3,7 +3,8 @@
 To determine the number of retiring employees per title, and identify employees who are eligible to participate in a mentorship program based on the raw employee data.
 
 ## Results: 
-* Provide a bulleted list with four major points from the two analysis deliverables. Use images as support where needed.
+* From the image below ![image](https://user-images.githubusercontent.com/83438418/129464219-2fbefddd-12ce-4d26-af13-dd7efb7b65c3.png)
+
 * A
 * B
 * C
