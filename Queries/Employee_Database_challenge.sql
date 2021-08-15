@@ -1,3 +1,4 @@
+
 CREATE TABLE departments (
   dept_no VARCHAR(4) NOT NULL,
   dept_name VARCHAR(40) NOT NULL,
@@ -77,6 +78,34 @@ SELECT COUNT(title) count, title
 FROM unique_titles
 GROUP BY title
 ORDER BY count DESC
+
+CREATE TABLE dept_emp (
+  emp_no INT NOT NULL,
+  dept_no VARCHAR NOT NULL,
+  from_date DATE NOT NULL,
+  to_date DATE NOT NULL,
+  FOREIGN KEY (emp_no) REFERENCES employees (emp_no)
+);
+
+SELECT DISTINCT ON (emp_no) e.emp_no, 
+e.first_name, 
+e.last_name, 
+e.birth_date,
+d.from_date,
+d.to_date,
+t.title
+INTO mentorship_eligibility
+FROM employees AS e
+INNER JOIN dept_emp AS d
+  ON e.emp_no = d.emp_no
+INNER JOIN titles AS t
+  On e.emp_no = t.emp_no
+
+WHERE (birth_date) BETWEEN '1965-01-01' AND '1965-12-31'
+ORDER BY emp_no, to_date DESC
+
+select *
+From mentorship_eligibility
 
 
 
